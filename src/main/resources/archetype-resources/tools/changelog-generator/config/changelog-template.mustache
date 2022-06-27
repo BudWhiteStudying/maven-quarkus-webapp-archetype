@@ -1,0 +1,30 @@
+{{#tags}}
+## {{#ifEquals name 'Next release'}} *{{name}}* {{else}} [{{name}}](http://gitlab.carige.web/internet-mobile-on-demand/{{ownerName}}/{{repoName}}/tags/{{name}}) ({{tagDate}}) {{/ifEquals}}
+
+    {{#ifContainsType commits type='feat'}}
+### Features
+        {{#commits}}
+            {{#ifCommitType . type='feat'}}
+ - {{#eachCommitScope .}} **{{.}}** {{/eachCommitScope}} {{{commitDescription .}}} ([{{hash}}](http://gitlab.carige.web/internet-mobile-on-demand/{{ownerName}}/{{repoName}}/commit/{{hash}}))
+            {{/ifCommitType}}
+        {{/commits}}
+    {{/ifContainsType}}
+
+    {{#ifContainsType commits type='refactor'}}
+### Changes
+        {{#commits}}
+            {{#ifCommitType . type='refactor'}}
+ - {{#eachCommitScope .}} **{{.}}** {{/eachCommitScope}} {{{commitDescription .}}} ([{{hash}}](http://gitlab.carige.web/internet-mobile-on-demand/{{ownerName}}/{{repoName}}/commit/{{hash}}))
+            {{/ifCommitType}}
+        {{/commits}}
+    {{/ifContainsType}}
+
+    {{#ifContainsType commits type='fix'}}
+### Bug Fixes
+        {{#commits}}
+            {{#ifCommitType . type='fix'}}
+ - {{#eachCommitScope .}} **{{.}}** {{/eachCommitScope}} {{{commitDescription .}}} ([{{hash}}](http://gitlab.carige.web/internet-mobile-on-demand/{{ownerName}}/{{repoName}}/commit/{{hash}}))
+            {{/ifCommitType}}
+        {{/commits}}
+    {{/ifContainsType}}
+{{/tags}}

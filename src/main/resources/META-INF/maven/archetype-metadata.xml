@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="quarkus-enterprise-application"
+    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="groupId">
+      <defaultValue>com.budwhite.studying</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="package">
+      <defaultValue>${groupId}.${artifactId.replace("-",".")}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="camelApplicationName">
+      <defaultValue>${artifactId.replaceAll("^a|-a", "A").replaceAll("^b|-b", "B").replaceAll("^c|-c", "C").replaceAll("^d|-d", "D").replaceAll("^e|-e", "E").replaceAll("^f|-f", "F").replaceAll("^g|-g", "G").replaceAll("^h|-h", "H").replaceAll("^i|-i", "I").replaceAll("^j|-j", "J").replaceAll("^k|-k", "K").replaceAll("^l|-l", "L").replaceAll("^m|-m", "M").replaceAll("^n|-n", "N").replaceAll("^o|-o", "O").replaceAll("^p|-p", "P").replaceAll("^q|-q", "Q").replaceAll("^r|-r", "R").replaceAll("^s|-s", "S").replaceAll("^t|-t", "T").replaceAll("^u|-u", "U").replaceAll("^v|-v", "V").replaceAll("^w|-w", "W").replaceAll("^x|-x", "X").replaceAll("^y|-y", "Y").replaceAll("^z|-z", "Z")}</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory>.mvn/wrapper</directory>
+      <includes>
+        <include>**/*.java</include>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory/>
+      <includes>
+        <include>.gitignore.tmpl</include>
+        <include>.dockerignore</include>
+        <include>mvnw.cmd</include>
+        <include>mvnw</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory/>
+      <includes>
+        <include>**/*README.md</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>tools</directory>
+      <includes>
+        <include>**/*.json</include>
+        <include>**/*.mustache</include>
+        <include>**/*.py</include>
+      </includes>
+      <excludes>
+        <exclude>**/*.jar</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="false">
+      <directory>tools</directory>
+      <includes>
+        <include>**/*.css</include>
+        <include>**/*.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="${rootArtifactId}-feature" dir="__rootArtifactId__-feature" name="${rootArtifactId}-feature">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-factory" dir="__rootArtifactId__-factory" name="${rootArtifactId}-factory">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-framework" dir="__rootArtifactId__-framework" name="${rootArtifactId}-framework">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-model" dir="__rootArtifactId__-model" name="${rootArtifactId}-model">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-integration" dir="__rootArtifactId__-integration" name="${rootArtifactId}-integration">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-data" dir="__rootArtifactId__-data" name="${rootArtifactId}-data">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-core" dir="__rootArtifactId__-core" name="${rootArtifactId}-core">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+          </includes>
+          <excludes>
+            <exclude>**/*.jar</exclude>
+            <exclude>**/*.png</exclude>
+          </excludes>
+        </fileSet>
+        <fileSet filtered="false" encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/docker</directory>
+          <includes>
+            <include>**/*.jvm</include>
+            <include>**/*.native</include>
+            <include>**/*.legacy-jar</include>
+            <include>**/*.native-micro</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>
